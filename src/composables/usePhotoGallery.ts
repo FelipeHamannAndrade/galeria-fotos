@@ -1,12 +1,11 @@
-
+import { ref, onMounted, watch } from 'vue';
 import { Capacitor } from '@capacitor/core';
 import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem'
 import { Storage } from '@capacitor/storage'
-import { ref, onMounted, watch } from 'vue';
+
 
 export function usePhotoGallery() {
-
     const photos = ref<UserPhoto[]>([]);
     const PHOTO_STORAGE = "photos";
 
@@ -63,13 +62,13 @@ export function usePhotoGallery() {
       photos,
       takePhoto
     };
-  }
+}
   
 export interface UserPhoto {
     filepath: string;
-    webviewPath?: string
+    webviewPath?: string; 
   
-        ;
 }
+
 
 
